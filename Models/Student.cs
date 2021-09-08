@@ -5,6 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 //Used for specifying table name in DB, code below used for that [Table("tb_student")]
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 
 namespace WebCodeFirstApproach.Models
 {
@@ -41,6 +42,12 @@ namespace WebCodeFirstApproach.Models
         [Compare("Password",ErrorMessage ="password must be same")]
         public string Confirmpassword { get; set; }
     }
+    public class DB:DbContext
+    {
+        public DB():base("cs")
+        {
 
-    public DB:db
+        }
+        public DbSet<Student> Students { get; set; }
+    }
 }
