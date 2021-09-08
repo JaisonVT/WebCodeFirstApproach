@@ -44,7 +44,7 @@ namespace WebCodeFirstApproach.Models
     }
     public class DB:DbContext
     {
-        public DB():base("cs")
+        public DB():base("cs")// cs means connectin string
         {
 
         }
